@@ -1,0 +1,272 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+:root {
+  font-size: 14px;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+header.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem;
+}
+
+header.header img.youtube-logo {
+  height: 20px;
+}
+
+header.header form.search-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  margin: 0 2rem 0 4rem;
+}
+
+header.header form.search-bar input.search-input {
+  width: 100%;
+  font-size: inherit;
+  padding: .4em;
+  border: 1px solid #777;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+header.header form.search-bar button.search-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 1.25rem;
+  border: 1px solid #777;
+  background-color: #f8f8f8;
+  border-left: none;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  cursor: pointer;
+}
+
+header.header form.search-bar button.search-btn:hover {
+  background-color: #f0f0f0;
+}
+
+header.header .menu-icons {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (auto)[4];
+      grid-template-columns: repeat(4, auto);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1.5rem;
+}
+
+header.header .menu-icons .menu-channel-icon {
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  background-color: #aaa;
+}
+
+.categories {
+  padding: 1rem 0;
+  border-top: 1px solid #999;
+  border-bottom: 1px solid #999;
+}
+
+.categories section.category-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: scroll;
+}
+
+.categories section.category-section::-webkit-scrollbar {
+  display: none;
+}
+
+.categories section.category-section .category {
+  margin-left: 1rem;
+  word-wrap: none;
+  white-space: nowrap;
+  border: 1px solid #ccc;
+  border-radius: 999px;
+  background-color: #e7e7e7;
+  padding: .5rem 1rem;
+  font-size: inherit;
+  cursor: pointer;
+  -webkit-transition: background-color 150ms;
+  transition: background-color 150ms;
+}
+
+.categories section.category-section .category:hover {
+  background-color: #ddd;
+}
+
+.categories section.category-section .category.active {
+  background-color: #606060;
+  color: #fff;
+  border-color: #eee;
+}
+
+.videos {
+  background-color: #f9f9f9;
+}
+
+.videos section.video-section {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(250px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 3rem 1rem;
+  padding: 3rem 0;
+  margin: 0 1.5rem;
+  border-top: 4px solid #ccc;
+}
+
+.videos section.video-section:first-child {
+  border-top: none;
+}
+
+.videos section.video-section .video-section-title {
+  grid-column: 1/-1;
+  margin: -.5rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 .5rem;
+}
+
+.videos section.video-section .video-section-title .video-section-title-close {
+  border: none;
+  background: none;
+  padding: 0;
+  font-size: 2rem;
+  color: #555;
+  cursor: pointer;
+}
+
+.videos section.video-section article.video-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.videos section.video-section article.video-container .thumbnail {
+  position: relative;
+  height: 150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+}
+
+.videos section.video-section article.video-container .thumbnail::before {
+  content: attr(data-duration);
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: white;
+  right: 5px;
+  bottom: 5px;
+  padding: 0.1em 0.3em;
+  border-radius: .3em;
+  font-size: .9rem;
+}
+
+.videos section.video-section article.video-container .thumbnail img.thumbnail-image {
+  width: 100%;
+  background-color: #aaa;
+}
+
+.videos section.video-section article.video-container .video-bottom-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-top: 1rem;
+}
+
+.videos section.video-section article.video-container .video-bottom-section .channel-icon {
+  margin-right: .75rem;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  background-color: #aaa;
+}
+
+.videos section.video-section article.video-container .video-bottom-section .video-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.videos section.video-section article.video-container .video-bottom-section .video-details .video-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: .2rem;
+  text-decoration: none;
+  color: #000;
+}
+
+.videos section.video-section article.video-container .video-bottom-section .video-details .video-channel-name {
+  margin-bottom: .1rem;
+  text-decoration: none;
+  -webkit-transition: color 150ms;
+  transition: color 150ms;
+}
+
+.videos section.video-section article.video-container .video-bottom-section .video-details .video-channel-name:hover {
+  color: #111;
+}
+
+.videos section.video-section article.video-container .video-bottom-section .video-details .video-channel-name,
+.videos section.video-section article.video-container .video-bottom-section .video-details .video-metadata {
+  color: #555;
+}
+/*# sourceMappingURL=main.css.map */
